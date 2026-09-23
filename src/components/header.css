@@ -1,0 +1,9 @@
+.header {
+    background-color: rgba(116, 56, 56, 0.712);
+}
+
+.header-title {
+    color: white;
+    text-align: center;
+    padding-top: 12px;
+}
