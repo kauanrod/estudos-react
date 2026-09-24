@@ -1,14 +1,24 @@
-import { Header } from './components/header';
-import { Aluno } from './components/aluno';
-import { Footer } from './components/footer';
+import { useState } from "react";
 
 export default function App() {
+  const [input, setInput] = useState("")
+  const [aluno, setAluno] = useState("")
+  const [idade, setIdade] = useState("")
+
+  function mostrarAluno() {
+    setAluno(input);
+    setIdade(idade);
+  }
   return (
     <div>
-      <Header title="Teste" />
-      <Aluno nome="Júlia Motte" idade={23} />
-      <Aluno nome="Kauan Rodrigues" idade={24} />
-      <Footer />
+      <h1>Conhecendo useState</h1>
+
+      <input placeholder="Nome" value={input} onChange={(e) => setInput(e.target.value)} />
+      <input placeholder="Idade" value={idade} onChange={(e) => setInput(e.target.value)} />
+      <br />
+      <button onClick={mostrarAluno}>Mostrar aluno</button>
+      <hr />
+      {aluno && <h3>Bem vindo: {aluno}, idade: {idade}</h3>}
     </div>
   )
 }
